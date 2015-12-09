@@ -1,0 +1,23 @@
+%ul.product-list
+  - @products.each do |product|
+    %li.col-md-3
+      %span.text-center{ style: 'display: block;' }
+        %span.title= product.title
+        - if product.image?
+          = link_to image_tag( product.image_url(:small), width: '100%' ), product_path(product)
+        - else
+          = image_tag 'no_image.png', width: '100%'
+        %span.description= product.short_description
+        %span.price= number_to_currency(product.price)
+        %span.line
+        %span.info= link_to 'MORE INFO', product_path(product)
+
+:javascript
+  $('.info a').hover( 
+    function() {
+      $(this).animate({ 'font-size': '1.1em' }, 200);
+    },
+    function() {
+      $(this).animate({ 'font-size': '1em' }, 200);
+    }
+  );

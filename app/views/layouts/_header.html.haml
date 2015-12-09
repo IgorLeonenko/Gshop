@@ -1,0 +1,21 @@
+.row.header
+  .col-md-12
+    = link_to image_tag('logo.png'), root_path, class: 'logo pull-left'
+    %h4.pull-right
+      = link_to 'home', root_path
+      %span.white
+        |
+      = link_to 'about us', '#'
+      %span.white
+        |
+      = link_to 'contact', '#'
+      %span.white
+        |
+      = link_to 'my account', '#'
+      %span.white
+        |
+      = link_to ' checkout', '#', class: 'fa fa-shopping-cart'
+  %ul.nav.nav-justified.col-md-12
+    - @cat.each do |category|
+      %li{ role: 'presentation' }
+        = link_to "#{category.title}", products_path(category: category.number)

@@ -1,0 +1,18 @@
+%ul.categories
+  - @categories.each do |category|
+    %li.col-md-6.image{ class: "#{ cycle('pull-left', 'pull-right') }" }
+      = link_to image_tag(category.image_url(:normal)), products_path(category: category.number)
+      = link_to products_path(category: category.number) do
+        %h2.text-center= category.title
+
+:javascript
+  $(".image").hover(
+    function(){
+      $(this).css({ '-filter': 'none', '-webkit-filter': 'grayscale(0%)' });
+      $(this).find('h2').animate({ width: [ "toggle", "swing" ], opacity: 'toggle' }, 200);
+    },
+    function(){
+      $(this).css({ '-filter': 'gray', '-webkit-filter': 'grayscale(100%)' });
+      $(this).find('h2').animate({ width: [ "toggle", "swing" ], opacity: 'toggle' }, 200);
+    }
+  );

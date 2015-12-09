@@ -1,0 +1,28 @@
+.product-page
+  .col-md-6.image
+    - if @product.image?
+      = image_tag @product.image_url(:normal), width: '100%'
+    - else
+      = image_tag 'no_image.png', width: '100%'
+  .col-md-6.descr
+    %h2.text-right= @product.short_description
+    %h3.text-right
+      article:
+      = @product.article
+    %h3.text-right
+      - if @product.quantity > 0
+        %span{ style: 'color: green' }
+          avaliable
+          - if @product.quantity <= 5
+            %br/
+            = @product.quantity
+            in stock 
+      - else
+        %span{ style: 'color: red' }
+          not avaliable
+    %h3.text-right
+      = number_to_currency(@product.price)
+    %p.text-justify
+      = @product.description
+    %p.text-right
+      = link_to ' ADD TO CART', '#', class: 'cart-button btn btn-lg fa fa-shopping-cart'

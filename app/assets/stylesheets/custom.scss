@@ -1,0 +1,126 @@
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
+
+body {
+  background: asset_url('31493.jpg') center center no-repeat fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+}
+
+.header {
+  margin-bottom: 10px;
+  h4 > a{
+    text-decoration: none;
+    color: grey;
+  }
+  h4 > a:hover{
+    color: darkgrey;
+  }
+  .white {
+    color: white;
+  }
+  ul {
+    background-color: rgba(0,0,0,0.6);
+    a {
+      border: 1px solid transparent;
+      color: #fff;
+      text-decoration: none;
+    }
+    a:hover {
+      background-color: rgba(0,0,0,0.3);
+      border: 1px solid white;
+      color: grey;
+    }
+  }
+}
+
+.wrapper {
+  .categories {
+    .image {
+      margin: 10px 0;
+      -filter: gray;
+      -webkit-filter: grayscale(100%);
+      img {
+        border: 1px solid white;
+      }
+      h2 {
+        display: none;
+        width: 500px;
+        border: 1px solid white;
+        position: absolute;
+        top: 250px;
+        left: 16px;
+        background-color: rgba(0,0,0, 0.8);
+        color: white;
+      }
+    }
+  }
+  .product-list {
+    color: #fff;
+    list-style: none;
+    li {
+      height: 450px;
+      font-family: 'Slabo 27px', serif;
+      font-size: 1.3em;
+      box-shadow: inset 2px 1px 10px 6px rgba(0, 0, 0, 0.5);
+      span {
+        display: block;
+      }
+      .title {
+        margin: 10px 0;
+      }
+      .price {
+        font-size: 1.5em;
+        color:  #e0ffff;
+        margin-top: 15px;
+      }
+      .line {
+        margin: 0 auto 10px auto;
+        width: 30px;
+        height: 1px;
+        background-color: white;
+      }
+      .description {
+        height: 40px;
+      }
+      .info a{
+        position: absolute;
+        left: 93px;
+        text-decoration: none;
+        color: #b8f5ff;
+        font-weight: bold;
+      }
+    }
+  }
+  .product-page {
+    .image img{
+      border: 5px solid grey;
+    }
+    .descr {
+      background-color: rgba(0,0,0,0.8);
+      min-height: 540px;
+      h2 {
+        margin-top: 5px;
+      }
+    }
+    .cart-button {
+      background-color: #42871b;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 0;
+    }
+    .cart-button:hover {
+      background-color: #c71b00;
+    }
+  }
+}
+
+.footer {
+  margin-top: 20px;
+  h4 {
+    color: white;
+  }
+}
