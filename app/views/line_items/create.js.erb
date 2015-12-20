@@ -1,0 +1,5 @@
+<% if @line_item.product.quantity < @line_item.quantity %>
+  alert('No more products availabel!');
+<% else %>
+  $('.cart-page .body').html("<%= j render @cart %>");
+<% end %>

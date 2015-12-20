@@ -14,7 +14,11 @@
       = link_to 'my account', '#'
       %span.white
         |
-      = link_to ' checkout', '#', class: 'fa fa-shopping-cart'
+      = link_to ' checkout', cart_path, class: 'fa fa-shopping-cart'
+      - if @cart.line_items.count > 0
+        %span.items
+          = pluralize @cart.line_items.count.to_i, 'item', 'items'
+          in cart
   %ul.nav.nav-justified.col-md-12
     - @cat.each do |category|
       %li{ role: 'presentation' }

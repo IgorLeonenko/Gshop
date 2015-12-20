@@ -34,6 +34,10 @@ body {
       color: grey;
     }
   }
+  .items {
+    color: grey;
+    font-size: 15px;
+  }
 }
 
 .wrapper {
@@ -43,6 +47,7 @@ body {
       margin: 10px 0;
       -filter: gray;
       -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
       img {
         border: 1px solid white;
       }
@@ -62,7 +67,7 @@ body {
     color: #fff;
     list-style: none;
     li {
-      height: 450px;
+      height: 480px;
       font-family: 'Slabo 27px', serif;
       font-size: 1.3em;
       box-shadow: inset 2px 1px 10px 6px rgba(0, 0, 0, 0.5);
@@ -93,6 +98,25 @@ body {
         color: #b8f5ff;
         font-weight: bold;
       }
+      .buy {
+        margin-top: 35px;
+        .cart-button {
+          background: #42871b !important;
+          text-decoration: none !important;
+          color: white !important;
+          font-weight: bold !important;
+          border-radius: 0 !important;
+        }
+        .cart-button:hover {
+          background: #c71b00 !important;
+        }
+      }
+      .badge {
+        position: absolute;
+        background: red;
+        border-radius: 0;
+        font-size: 14px;
+      }
     }
   }
   .product-page {
@@ -107,18 +131,46 @@ body {
       }
     }
     .cart-button {
-      background-color: #42871b;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      border-radius: 0;
+      background: #42871b !important;
+      text-decoration: none !important;
+      color: white !important;
+      font-weight: bold !important;
+      border-radius: 0 !important;
     }
     .cart-button:hover {
-      background-color: #c71b00;
+      background: #c71b00 !important;
+    }
+  }
+  .cart-page {
+    background-color: rgba(0,0,0,0.8);
+    min-height: 200px;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    .order{
+      form {
+        margin: 10px 0;
+        .help-inline {
+          color: red;
+        }
+        input {
+          background: transparent;
+          color: white;
+        }
+        input[type='submit'], .back {
+          background: green;
+          color: white;
+          border-radius: 3px;
+        }
+      }
     }
   }
 }
-
+.close {
+  color: black;
+  text-decoration: none;
+}
 .footer {
   margin-top: 20px;
   h4 {

@@ -8,7 +8,12 @@
     = csrf_meta_tags
   %body
     .container
-      = render 'layouts/header'
+      .row
+        .col-md-12
+          = render 'layouts/header'
+      .row
+        .col-md-12.errors
+          = render 'shared/errors'
       .row
         .col-md-12.wrapper
           = yield

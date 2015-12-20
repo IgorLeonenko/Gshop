@@ -4,6 +4,8 @@
       %span.text-center{ style: 'display: block;' }
         %span.title= product.title
         - if product.image?
+          -if product.quantity == 0
+            %span.badge Not available
           = link_to image_tag( product.image_url(:small), width: '100%' ), product_path(product)
         - else
           = image_tag 'no_image.png', width: '100%'
@@ -11,6 +13,8 @@
         %span.price= number_to_currency(product.price)
         %span.line
         %span.info= link_to 'MORE INFO', product_path(product)
+        %span.buy
+          = button_to 'ADD TO CART', line_items_path(product_id: product.id), class: 'cart-button btn btn-lg', disabled: product.quantity == 0
 
 :javascript
   $('.info a').hover( 

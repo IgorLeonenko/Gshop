@@ -1,0 +1,15 @@
+- @cart.line_items.each_with_index do |item, index|
+  %tr.line-item
+    %td= index+1
+    %td= item.product.title
+    %td
+      = link_to '+', line_items_path(product_id: item.product.id), method: :post, class: 'plus', remote: true
+      = item.quantity
+      = link_to '-', line_item_path(item), method: :delete, class: 'minus', remote: true
+    %td= number_to_currency( item.total_price )
+    %td= link_to 'X', line_item_path(item, delete: true), method: :delete, data: {confirm: "Are you sure?"}, remote: true
+%tr
+  %td{colspan: '5'}
+    %span.pull-right
+      Total:
+      = number_to_currency( @cart.total_price )

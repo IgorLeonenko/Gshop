@@ -1,0 +1,5 @@
+$('.cart-page .body').html("<%= j render @cart %>");
+
+if ( $('.body .line-item').length == 0 ){
+  $('.cart-page').html('<h2 class="text-center">Sorry, you cart is empty</h2>');
+}

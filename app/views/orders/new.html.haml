@@ -1,0 +1,28 @@
+.cart-page.col-md-12
+  - if @cart.line_items.count > 0
+    .col-md-6.items
+      %table.table.table-condensed
+        %thead
+          %tr
+            %td #id
+            %td Title
+            %td Quantity
+            %td Price
+        %tbody.body
+          = render @cart
+    .col-md-6.order
+      = form_for @order do |f|
+        .form-group
+          = f.text_field :email, placeholder: '*email', class: 'form-control'
+        .form-group
+          = f.text_field :name, placeholder: '*name', class: 'form-control'
+        .form-group
+          = f.text_field :last_name, placeholder: '*last_name', class: 'form-control'
+        .form-group
+          = f.text_field :address, placeholder: '*address', class: 'form-control'
+        .form-group
+          = f.text_field :phone, placeholder: '*phone 1(111)111-11-11', class: 'form-control'
+        = f.submit 'create order', class: "btn"
+        = link_to 'back to shop', root_path, class: "btn back"
+  - else
+    %h2.text-center Sorry, you cart is empty

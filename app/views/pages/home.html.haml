@@ -8,11 +8,11 @@
 :javascript
   $(".image").hover(
     function(){
-      $(this).css({ '-filter': 'none', '-webkit-filter': 'grayscale(0%)' });
+      $(this).css({ '-filter': 'none', '-webkit-filter': 'grayscale(0%)', 'filter': 'grayscale(0%)' });
       $(this).find('h2').animate({ width: [ "toggle", "swing" ], opacity: 'toggle' }, 200);
     },
     function(){
-      $(this).css({ '-filter': 'gray', '-webkit-filter': 'grayscale(100%)' });
+      $(this).css({ '-filter': 'gray', '-webkit-filter': 'grayscale(100%)', 'filter': 'grayscale(100%)' });
       $(this).find('h2').animate({ width: [ "toggle", "swing" ], opacity: 'toggle' }, 200);
     }
   );
